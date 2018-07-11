@@ -24,5 +24,31 @@ namespace BaiduMapFinder
         {
             InitializeComponent();
         }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            var control = sender as Control;
+            var name = control.Name;
+            switch(name)
+            {
+                case "option":
+                    var optionWindow = new OptionWindow();
+                    optionWindow.Owner = this;
+                    optionWindow.ShowDialog();
+                    break;
+                case "about":
+                    var aboutWindow = new AboutWindow();
+                    aboutWindow.Owner = this;
+                    aboutWindow.ShowDialog();
+                    break;
+                case "exit":
+                    Application.Current.Shutdown();
+                    break;
+                default:
+                    break;
+            }
+        }
+
+
     }
 }

@@ -1,0 +1,34 @@
+﻿<Window x:Class="BaiduMapFinder.AboutWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BaiduMapFinder"
+        mc:Ignorable="d"
+        Title="关于" Height="200" Width="400" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" Background="AliceBlue">
+    <DockPanel LastChildFill="true">
+        <Grid DockPanel.Dock="Left">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Row="1" Width="50" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+        <Grid DockPanel.Dock="Left">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="1" Content="version 1.0 for .Net 4.6.1" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+            <Label Grid.Row="2" Content="built: 2018年7月11日" HorizontalAlignment="Center"/>
+            <Label Grid.Row="3" Content="Copyright by ©2018 广州佰聆数据, All rights reserved." HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        </Grid>
+    </DockPanel>
+</Window>

@@ -5,8 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BaiduMapFinder"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="百度地图查询" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <DockPanel x:Name="xPanel">
+        <Menu Name="menu" Height="25" DockPanel.Dock="Top" Background="AliceBlue">
+            <MenuItem Header="菜单">
+                <Menu>
+                    <MenuItem x:Name="option" Header="设置" Click="MenuItem_Click"></MenuItem>
+                </Menu>
+                <Menu>
+                    <MenuItem x:Name="exit" Header="退出" Click="MenuItem_Click"></MenuItem>
+                </Menu>
+            </MenuItem>
+            <MenuItem Header="关于">
+                <Menu>
+                    <MenuItem x:Name="about" Header="关于" Click="MenuItem_Click"></MenuItem>
+                </Menu>
+            </MenuItem>
+        </Menu>
+        <TabControl x:Name="tabControl" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" DockPanel.Dock="Top" Background="AliceBlue">
+            <TabItem Header="行政区域查询">
+                <local:RegionQueryControl></local:RegionQueryControl>
+            </TabItem>
+            <TabItem Header="圆形区域查询">
+                <local:CircumQueryControl></local:CircumQueryControl>
+            </TabItem>
+            <TabItem Header="矩形区域查询">
+                <local:RectangeQueryControl></local:RectangeQueryControl>
+            </TabItem>
+            <TabItem Header="地点详情查询">
+                <local:DetailQueryControl></local:DetailQueryControl>
+            </TabItem>
+        </TabControl>
+    </DockPanel>
 </Window>
