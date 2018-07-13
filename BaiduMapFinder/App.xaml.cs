@@ -13,5 +13,9 @@ namespace BaiduMapFinder
     /// </summary>
     public partial class App : Application
     {
+        public App()
+        {
+            AutoMapper.Mapper.Initialize(cfg => cfg.AddProfile<Configure.AutoMapperConfig>());
+        }
     }
 }

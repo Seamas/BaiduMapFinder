@@ -58,7 +58,7 @@ namespace BaiduMapFinder
                 Query = query,
                 Location = $"{lat1},{lng1}",
                 Radius = radius > 0 ? radius.ToString() : "1000",
-                Page_Num = 20
+                Page_Size = 20
             };
 
             return new PlaceSearchRequest<PlaceCircumModel>(model);

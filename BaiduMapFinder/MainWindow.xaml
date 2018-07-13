@@ -22,18 +22,41 @@
                 </Menu>
             </MenuItem>
         </Menu>
-        <TabControl x:Name="tabControl" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" DockPanel.Dock="Top" Background="AliceBlue">
-            <TabItem Header="行政区域查询">
-                <local:RegionQueryControl></local:RegionQueryControl>
+        <TabControl HorizontalAlignment="Stretch" VerticalAlignment="Stretch" DockPanel.Dock="Top" Background="AliceBlue" TabStripPlacement="Left">
+            <TabItem Header="下载">
+                <TabControl HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="AliceBlue">
+                    <TabItem Header="矩形区域下载">
+                        <local:RectangeDownloadControl></local:RectangeDownloadControl>
+                    </TabItem>
+                    <TabItem Header="圆形区域下载">
+                        <local:CircumDownloadControl></local:CircumDownloadControl>
+                    </TabItem>
+                    <TabItem Header="地理编码转换">
+                        <local:GeoQueryControl></local:GeoQueryControl>
+                    </TabItem>
+                    <TabItem Header="行政区域下载" Visibility="Hidden">
+                        <local:RegionDownloadControl></local:RegionDownloadControl>
+                    </TabItem>
+                </TabControl>
             </TabItem>
-            <TabItem Header="圆形区域查询">
-                <local:CircumQueryControl></local:CircumQueryControl>
-            </TabItem>
-            <TabItem Header="矩形区域查询">
-                <local:RectangeQueryControl></local:RectangeQueryControl>
-            </TabItem>
-            <TabItem Header="地点详情查询">
-                <local:DetailQueryControl></local:DetailQueryControl>
+            <TabItem Header="查询" Visibility="Hidden">
+                <TabControl HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="AliceBlue">
+                    <TabItem Header="行政区域查询">
+                        <local:RegionQueryControl></local:RegionQueryControl>
+                    </TabItem>
+                    <TabItem Header="圆形区域查询">
+                        <local:CircumQueryControl></local:CircumQueryControl>
+                    </TabItem>
+                    <TabItem Header="矩形区域查询">
+                        <local:RectangeQueryControl></local:RectangeQueryControl>
+                    </TabItem>
+                    <TabItem Header="地点详情查询">
+                        <local:DetailQueryControl></local:DetailQueryControl>
+                    </TabItem>
+                    <TabItem Header="地理编码转换">
+                        <local:GeoQueryControl></local:GeoQueryControl>
+                    </TabItem>
+                </TabControl>
             </TabItem>
         </TabControl>
     </DockPanel>

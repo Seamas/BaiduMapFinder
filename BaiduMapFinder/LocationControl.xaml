@@ -8,8 +8,8 @@
              d:DesignHeight="37" d:DesignWidth="400">
     <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
         <Label Content="经度:" Margin="10 0 0 0 " VerticalAlignment="Center"/>
-        <TextBox Margin="10 0 0 0" Width="60" Text="{Binding Lng, Mode=TwoWay}" VerticalAlignment="Center"/>
+        <TextBox Margin="10 0 0 0" MinWidth="60" Text="{Binding Lng, Mode=TwoWay}" VerticalAlignment="Center"/>
         <Label Content="纬度:" Margin="10 0 0 0 " VerticalAlignment="Center"/>
-        <TextBox  Margin="10 0 0 0 " Width="60" Text="{Binding Lat, Mode=TwoWay}" VerticalAlignment="Center"/>
+        <TextBox  Margin="10 0 0 0 " MinWidth="60" Text="{Binding Lat, Mode=TwoWay}" VerticalAlignment="Center"/>
     </StackPanel>
 </UserControl>

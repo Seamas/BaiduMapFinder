@@ -14,6 +14,7 @@
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -35,8 +36,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BaiduMap, Version=0.5.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Seamas.BaiduMap.0.5.0\lib\netstandard2.0\BaiduMap.dll</HintPath>
+    <Reference Include="AutoMapper, Version=7.0.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.7.0.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="BaiduMap, Version=0.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Seamas.BaiduMap.0.8.0\lib\netstandard2.0\BaiduMap.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -44,6 +48,10 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -67,6 +75,20 @@
       <DependentUpon>AboutWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="BaiduClientCreator.cs" />
+    <Compile Include="Configure\AutoMapperConfig.cs" />
+    <Compile Include="CsvWriter.cs" />
+    <Compile Include="DownloadControl\CircumDownloadControl.xaml.cs">
+      <DependentUpon>CircumDownloadControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DownloadControl\RectangeDownloadControl.xaml.cs">
+      <DependentUpon>RectangeDownloadControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DownloadControl\RegionDownloadControl.xaml.cs">
+      <DependentUpon>RegionDownloadControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExportModels\PlaceDetail.cs" />
+    <Compile Include="GlobalSetting.cs" />
+    <Compile Include="PathEnsure.cs" />
     <Compile Include="QueryControls\DetailQueryControl.xaml.cs">
       <DependentUpon>DetailQueryControl.xaml</DependentUpon>
     </Compile>
@@ -79,6 +101,9 @@
     <Compile Include="OptionWindow.xaml.cs">
       <DependentUpon>OptionWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="QueryControls\GeoQueryControl.xaml.cs">
+      <DependentUpon>GeoQueryControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="QueryControls\RectangeQueryControl.xaml.cs">
       <DependentUpon>RectangeQueryControl.xaml</DependentUpon>
     </Compile>
@@ -89,6 +114,18 @@
     <Page Include="AboutWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DownloadControl\CircumDownloadControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DownloadControl\RectangeDownloadControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DownloadControl\RegionDownloadControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="QueryControls\DetailQueryControl.xaml">
       <SubType>Designer</SubType>
@@ -115,6 +152,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="OptionWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="QueryControls\GeoQueryControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

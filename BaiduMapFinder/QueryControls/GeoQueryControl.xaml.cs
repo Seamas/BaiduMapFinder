@@ -1,4 +1,7 @@
-﻿using System;
+﻿using BaiduMap.Request;
+using BaiduMap.Request.Models;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,18 +15,15 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using BaiduMap.Request.Models;
-using BaiduMap.Request;
-using Newtonsoft.Json;
 
 namespace BaiduMapFinder
 {
     /// <summary>
-    /// Interaction logic for RectangeQuery.xaml
+    /// Interaction logic for GeoQueryControl.xaml
     /// </summary>
-    public partial class RectangeQueryControl : UserControl
+    public partial class GeoQueryControl : UserControl
     {
-        public RectangeQueryControl()
+        public GeoQueryControl()
         {
             InitializeComponent();
         }
@@ -44,22 +44,18 @@ namespace BaiduMapFinder
             txbResult.Text = JsonConvert.SerializeObject(resp);
         }
 
-        private PlaceSearchRequest<PlaceRectangeModel> BuildRequest()
+        private GeoCoderRequest BuildRequest()
         {
-            var lat1 = location1.Location.Lat;
-            var lng1 = location1.Location.Lng;
-            var lat2 = location2.Location.Lat;
-            var lng2 = location2.Location.Lng;
-            var query = txbKey.Text.Trim();
-
-            var model = new PlaceRectangeModel()
+            var address = txbAddress.Text.Trim();
+            var city = txbCity.Text.Trim();
+            
+            var model = new GeoCoderModel()
             {
-                Query = query,
-                Bounds = $"{lat1},{lng1},{lat2},{lng2}",
-                Page_Size =20
+                Address = address,
+                City = city
             };
 
-            return new PlaceSearchRequest<PlaceRectangeModel>(model);
+            return new GeoCoderRequest(model);
         }
     }
 }
